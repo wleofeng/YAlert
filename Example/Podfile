@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'YAlert_Example' do
+  pod 'YAlert', :path => '../'
+
+  target 'YAlert_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
