@@ -27,7 +27,7 @@ There are two properties responsible for handling user events when AlertViewCont
 
 `delegate` allows your view controller to receive and handle primary button, secondary button, and background tap events.
 
-`tag` allows you to differentiate different AlertViewController instance when handling tap events. You may have different event handling logic based on the AlertViewController's tag number.
+`tag` allows you to differentiate AlertViewController instance when handling tap events. You may have different event handling logic based on the AlertViewController's tag number.
 
 ```
 extension ViewController: AlertViewControllerDelegate {
