@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/YAlert.svg?style=flat)](http://cocoapods.org/pods/YAlert)
 [![Platform](https://img.shields.io/cocoapods/p/YAlert.svg?style=flat)](http://cocoapods.org/pods/YAlert)
 
+
+<image src="https://github.com/wleofeng/YAlert/blob/master/screenshot/screenshot1.png" width=200px>
 ## How to use
 In your view controller, you can initialize and present an AlertViewController instance using the following code:
 ```
