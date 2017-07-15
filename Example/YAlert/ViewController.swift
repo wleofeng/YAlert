@@ -13,14 +13,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let alertVC = AlertViewController(bannerImageName: "banner",
+                                          title: "Alert #1",
+                                          message: "This is a message",
+                                          primaryButtonTitle: "Ok",
+                                          secondaryButtonTitle: "Cancel")
+        alertVC.tag = 1000
+        alertVC.delegate = self
+        alertVC.present()
     }
     
     @IBAction func showAlertButtonTapped(_ sender: Any) {
-        let alertVC = AlertViewController(bannerImageName: "banner",
-                                          title: "Title",
+        let alertVC = AlertViewController(bannerImageName: "bann2er",
+                                          title: "Alert #2",
                                           message: "This is a message",
-                                          button1: "Ok",
-                                          button2: "Cancel")
+                                          primaryButtonTitle: "Ok",
+                                          secondaryButtonTitle: "Cancel")
+        alertVC.tag = 1000
         alertVC.delegate = self
         alertVC.present()
     }
@@ -28,6 +38,16 @@ class ViewController: UIViewController {
 
 extension ViewController: AlertViewControllerDelegate {
     func didTapPrimaryButton(_ sender: AlertViewController) {
+        switch sender.tag {
+        case 1000:
+            print("1000")
+        case 2000:
+            print("2000")
+        default:
+            print("no tag")
+        }
+        
+        
         print("primary button tapped")
     }
     

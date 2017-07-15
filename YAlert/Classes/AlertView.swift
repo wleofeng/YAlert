@@ -112,7 +112,10 @@ extension AlertView {
     }
     
     fileprivate func setupBanner(_ bannerImageName: String) {
-        let image = UIImage(imageLiteralResourceName: bannerImageName)
+        guard let image = UIImage(named: bannerImageName) else {
+            return
+        }
+    
         let ratio = (UIScreen.main.bounds.size.width - (UI.margin * 2.0)) / image.size.width
         var bannerImageViewFrame  = bannerImageView.frame
         bannerImageViewFrame.size.height = image.size.height * ratio

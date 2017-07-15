@@ -18,7 +18,8 @@ open class AlertViewController: UIViewController {
     fileprivate var windowMode: Bool = false
     var alert: Alert
     var alertView: AlertView
-    public weak var delegate: AlertViewControllerDelegate?
+    open weak var delegate: AlertViewControllerDelegate?
+    open var tag: Int = 0
     
     // Initialization
     init(alert: Alert) {
@@ -28,8 +29,8 @@ open class AlertViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    public init(bannerImageName: String?, title: String?, message: String?, button1: String?, button2: String?) {
-        self.alert = Alert(bannerImageName: bannerImageName, title: title, message: message, primaryButtonTitle: button1, secondaryButtonTitle: button2)
+    public init(bannerImageName: String?, title: String?, message: String?, primaryButtonTitle: String?, secondaryButtonTitle: String?) {
+        self.alert = Alert(bannerImageName: bannerImageName, title: title, message: message, primaryButtonTitle: primaryButtonTitle, secondaryButtonTitle: secondaryButtonTitle)
         self.alertView = AlertView(model: self.alert)
         
         super.init(nibName: nil, bundle: nil)
