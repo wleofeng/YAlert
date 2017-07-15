@@ -22,7 +22,7 @@ pod "YAlert"
 
 ## Author
 
-wleofeng@gmail.com, wleofeng@gmail.com
+Leo Feng, wleofeng@gmail.com
 
 ## License
 
