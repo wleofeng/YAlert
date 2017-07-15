@@ -16,29 +16,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAlertButtonTapped(_ sender: Any) {
-        let test = YAlert.AlertViewController(bannerImageName: nil, title: nil, message: "hh", button1:"ok", button2: "")
-            test.present()
-//        let alertVC = AlertViewController(bannerImageName: "banner",
-//                                          title: "Hi",
-//                                          message: "This is a message",
-//                                          button1: "Ok",
-//                                          button2: "Cancel")
-//        alertVC.delegate = self
-//        alertVC.present()
+        let alertVC = AlertViewController(bannerImageName: "banner",
+                                          title: "Hi",
+                                          message: "This is a message",
+                                          button1: "Ok",
+                                          button2: "Cancel")
+        alertVC.delegate = self
+        alertVC.present()
     }
 }
 
 extension ViewController: AlertViewControllerDelegate {
-    func didTappedPrimaryButton(_ sender: AlertViewController) {
+    func didTapPrimaryButton(_ sender: AlertViewController) {
         print("primary button tapped")
     }
     
-    func didTappedSecondaryButton(_ sender: AlertViewController) {
-        
+    func didTapSecondaryButton(_ sender: AlertViewController) {
+        print("secondary button tapped")
     }
     
-    func didTappedBackground(_ sender: AlertViewController) {
-        
+    func didTapBackground(_ sender: AlertViewController) {
+        print("background tapped")
     }
 }
 
