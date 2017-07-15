@@ -14,7 +14,7 @@ import UIKit
     @objc optional func didTapBackground(_ sender: AlertViewController)
 }
 
-public class AlertViewController: UIViewController {
+open class AlertViewController: UIViewController {
     fileprivate var windowMode: Bool = false
     var alert: Alert
     var alertView: AlertView
@@ -45,7 +45,7 @@ public class AlertViewController: UIViewController {
 
 // MARK: View cycle
 extension AlertViewController {
-    public override func loadView() {
+    open override func loadView() {
         alertView.primaryButton.addTarget(self, action: #selector(button1Tapped(_:)), for: UIControlEvents.touchUpInside)
         alertView.secondaryButton.addTarget(self, action: #selector(button2Tapped(_:)), for: UIControlEvents.touchUpInside)
         
@@ -57,7 +57,7 @@ extension AlertViewController {
         view = alertView
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         alertView.setupStackViewEffects()
