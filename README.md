@@ -5,11 +5,49 @@
 [![License](https://img.shields.io/cocoapods/l/YAlert.svg?style=flat)](http://cocoapods.org/pods/YAlert)
 [![Platform](https://img.shields.io/cocoapods/p/YAlert.svg?style=flat)](http://cocoapods.org/pods/YAlert)
 
-## Example
+## How to use
+In your view controller, you can initialize and present an AlertViewController instance using the following code:
+```
+let alertVC = AlertViewController(bannerImageName: "banner",
+                                            title: "Alert #1",
+                                          message: "This is a message",
+                                          primaryButtonTitle: "Ok",
+                                          secondaryButtonTitle: "Cancel")
+alertVC.tag = 1000
+alertVC.delegate = self
+alertVC.present()
+```
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+There are two properties responsible for handling user events when AlertViewController is present.
 
-## Requirements
+`delegate` allows your view controller to receive and handle primary button, secondary button, and background tap events.
+
+`tag` allows you to differentiate different AlertViewController instance when handling tap events. You may have different event handling logic based on the AlertViewController's tag number.
+
+```
+extension ViewController: AlertViewControllerDelegate {
+    func didTapPrimaryButton(_ sender: AlertViewController) {
+        switch sender.tag {
+        case 1000:
+            print("1000")
+        case 2000:
+            print("2000")
+        default:
+            print("no tag")
+        }
+
+        print("primary button tapped")
+    }
+
+    func didTapSecondaryButton(_ sender: AlertViewController) {
+        print("secondary button tapped")
+    }
+
+    func didTapBackground(_ sender: AlertViewController) {
+        print("background tapped")
+    }
+}
+```
 
 ## Installation
 
