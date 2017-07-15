@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     @IBAction func showAlertButtonTapped(_ sender: Any) {
         let alertVC = AlertViewController(bannerImageName: "banner",
-                                          title: "Hi",
+                                          title: "Title",
                                           message: "This is a message",
                                           button1: "Ok",
                                           button2: "Cancel")

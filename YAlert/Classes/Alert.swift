@@ -18,10 +18,10 @@ class Alert {
     init() { }
     
     init(bannerImageName: String?, title: String?, message: String?, primaryButtonTitle: String?, secondaryButtonTitle: String?) {
-        self.bannerImageName = bannerImageName ?? ""
-        self.title = title ?? ""
-        self.message = message ?? ""
-        self.primaryButtonTitle = primaryButtonTitle ?? ""
-        self.secondaryButtonTitle = secondaryButtonTitle ?? ""
+        self.bannerImageName = bannerImageName
+        self.title = title
+        self.message = message
+        self.primaryButtonTitle = primaryButtonTitle
+        self.secondaryButtonTitle = secondaryButtonTitle 
     }
 }

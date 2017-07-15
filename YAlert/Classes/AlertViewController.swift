@@ -82,14 +82,15 @@ extension AlertViewController {
     }
     
     // Presentation Methods
-    public func present() {
+    open func present() {
         if let rootVC = UIApplication.shared.keyWindow?.rootViewController {
             // This is simply doing the same thing as presenting a view controller in container view
             rootVC.addChildViewController(self)
             rootVC.view.addSubview(view)
             didMove(toParentViewController: rootVC)
+            view.frame = UIApplication.shared.keyWindow?.bounds ?? UIScreen.main.bounds // view should cover the full window/screen
         } else {
-            // TODO: run tests
+            // An alternative to present via a new window
             windowMode = true
             
             let window: UIWindow
@@ -102,12 +103,12 @@ extension AlertViewController {
                 window.tag = 9999
                 window.makeKeyAndVisible()
             }
-            
+        
+            // add slight delay to avoid a view distortion issue
             let delayInSeconds: Double = 0.1
-            let popTime: DispatchTime = DispatchTime.now() + Double(Int64(delayInSeconds) * Int64(NSEC_PER_SEC)) / Double(NSEC_PER_SEC)
-            DispatchQueue.main.asyncAfter(deadline: popTime, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
                 window.rootViewController?.present(self, animated: false, completion: nil)
-            })
+            }
         }
     }
     
