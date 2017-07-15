@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-struct Constants {
+struct UI {
     static let margin: CGFloat = 75.0
 }

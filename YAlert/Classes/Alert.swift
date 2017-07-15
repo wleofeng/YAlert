@@ -12,16 +12,16 @@ class Alert {
     var bannerImageName: String?
     var title: String?
     var message: String?
-    var button1: String?
-    var button2: String?
+    var primaryButtonTitle: String?
+    var secondaryButtonTitle: String?
     
     init() { }
     
-    init(bannerImageName: String?, title: String?, message: String?, button1: String?, button2: String?) {
+    init(bannerImageName: String?, title: String?, message: String?, primaryButtonTitle: String?, secondaryButtonTitle: String?) {
         self.bannerImageName = bannerImageName ?? ""
         self.title = title ?? ""
         self.message = message ?? ""
-        self.button1 = button1 ?? ""
-        self.button2 = button2 ?? ""
+        self.primaryButtonTitle = primaryButtonTitle ?? ""
+        self.secondaryButtonTitle = secondaryButtonTitle ?? ""
     }
 }

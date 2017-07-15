@@ -15,8 +15,8 @@ class AlertView: UIView {
     lazy var bannerImageView: UIImageView = UIImageView()
     lazy var titleTextView: UITextView = UITextView()
     lazy var messageTextView: UITextView = UITextView()
-    lazy var button1: UIButton = UIButton(type: UIButtonType.system)
-    lazy var button2: UIButton = UIButton(type: UIButtonType.system)
+    lazy var primaryButton: UIButton = UIButton(type: .system)
+    lazy var secondaryButton: UIButton = UIButton(type: .system)
     
     init(model: Alert) {
         super.init(frame: UIScreen.main.bounds)
@@ -39,9 +39,9 @@ class AlertView: UIView {
         
         setupBackground()
         
-        stackView.axis = UILayoutConstraintAxis.vertical
-        stackView.alignment = UIStackViewAlignment.center
-        stackView.distribution = UIStackViewDistribution.fill
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 0
         stackView.alpha = 0
@@ -53,16 +53,16 @@ class AlertView: UIView {
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
-            stackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: Constants.margin
+            stackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: UI.margin
             ),
-            stackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -Constants.margin)
+            stackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -UI.margin)
             ])
     }
     
     func config(_ model: Alert) {
         // Do all the view setup here
-        if let banner = model.bannerImageName, banner.isValid {
-            setupBanner(banner)
+        if let imageName = model.bannerImageName, imageName.isValid {
+            setupBanner(imageName)
             stackView.addArrangedSubview(bannerImageView)
         }
         
@@ -76,18 +76,19 @@ class AlertView: UIView {
             stackView.addArrangedSubview(messageTextView)
         }
         
-        if let button = model.button1, button.isValid {
-            setupButton1(button)
-            stackView.addArrangedSubview(button1)
+        if let title = model.primaryButtonTitle, title.isValid {
+            setupPrimaryButton(title)
+            stackView.addArrangedSubview(primaryButton)
         }
         
-        if let button = model.button2, button.isValid {
-            setupButton2(button)
-            stackView.addArrangedSubview(button2)
+        if let title = model.secondaryButtonTitle, title.isValid {
+            setupSecondaryButton(title)
+            stackView.addArrangedSubview(secondaryButton)
         }
     }
 }
 
+// MARK: View setup
 extension AlertView {
     fileprivate func setupBackground() {
         backgroundView.frame = UIScreen.main.bounds
@@ -112,11 +113,11 @@ extension AlertView {
     
     fileprivate func setupBanner(_ bannerImageName: String) {
         let image = UIImage(imageLiteralResourceName: bannerImageName)
-        let ratio = (UIScreen.main.bounds.size.width - (Constants.margin * 2.0)) / image.size.width
+        let ratio = (UIScreen.main.bounds.size.width - (UI.margin * 2.0)) / image.size.width
         var bannerImageViewFrame  = bannerImageView.frame
         bannerImageViewFrame.size.height = image.size.height * ratio
         bannerImageViewFrame.size.width = UIScreen.main.bounds.size.width
-            - (Constants.margin * 2.0)
+            - (UI.margin * 2.0)
         
         bannerImageView.image = image
         bannerImageView.backgroundColor = UIColor.black
@@ -172,14 +173,14 @@ extension AlertView {
         messageTextView.frame = textViewFrame
     }
     
-    fileprivate func setupButton1(_ buttonText: String) {
-        button1.setTitle(buttonText, for: UIControlState())
-        setupCommonButton(button1)
+    fileprivate func setupPrimaryButton(_ buttonText: String) {
+        primaryButton.setTitle(buttonText, for: UIControlState())
+        setupCommonButton(primaryButton)
     }
     
-    fileprivate func setupButton2(_ buttonText: String) {
-        button2.setTitle(buttonText, for: UIControlState())
-        setupCommonButton(button2)
+    fileprivate func setupSecondaryButton(_ buttonText: String) {
+        secondaryButton.setTitle(buttonText, for: UIControlState())
+        setupCommonButton(secondaryButton)
     }
     
     fileprivate func setupCommonButton(_ button: UIButton) {

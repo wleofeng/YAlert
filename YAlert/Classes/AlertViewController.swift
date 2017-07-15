@@ -8,10 +8,10 @@
 
 import UIKit
 
-public protocol AlertViewControllerDelegate: class {
-    func didTappedPrimaryButton(_ sender: AlertViewController)
-    func didTappedSecondaryButton(_ sender: AlertViewController)
-    func didTappedBackground(_ sender: AlertViewController)
+@objc public protocol AlertViewControllerDelegate: class {
+    @objc optional func didTapPrimaryButton(_ sender: AlertViewController)
+    @objc optional func didTapSecondaryButton(_ sender: AlertViewController)
+    @objc optional func didTapBackground(_ sender: AlertViewController)
 }
 
 public class AlertViewController: UIViewController {
@@ -29,7 +29,7 @@ public class AlertViewController: UIViewController {
     }
     
     public init(bannerImageName: String?, title: String?, message: String?, button1: String?, button2: String?) {
-        self.alert = Alert(bannerImageName: bannerImageName, title: title, message: message, button1: button1, button2: button2)
+        self.alert = Alert(bannerImageName: bannerImageName, title: title, message: message, primaryButtonTitle: button1, secondaryButtonTitle: button2)
         self.alertView = AlertView(model: self.alert)
         
         super.init(nibName: nil, bundle: nil)
@@ -37,7 +37,7 @@ public class AlertViewController: UIViewController {
     
     public required init?(coder aDecoder: NSCoder) {
         self.alert = Alert()
-        alertView = AlertView(frame: CGRect.zero)
+        self.alertView = AlertView(frame: .zero)
         
         super.init(coder: aDecoder)
     }
@@ -46,8 +46,8 @@ public class AlertViewController: UIViewController {
 // MARK: View cycle
 extension AlertViewController {
     public override func loadView() {
-        alertView.button1.addTarget(self, action: #selector(button1Tapped(_:)), for: UIControlEvents.touchUpInside)
-        alertView.button2.addTarget(self, action: #selector(button2Tapped(_:)), for: UIControlEvents.touchUpInside)
+        alertView.primaryButton.addTarget(self, action: #selector(button1Tapped(_:)), for: UIControlEvents.touchUpInside)
+        alertView.secondaryButton.addTarget(self, action: #selector(button2Tapped(_:)), for: UIControlEvents.touchUpInside)
         
         let recognizer = UITapGestureRecognizer()
         recognizer.delegate = self
@@ -68,23 +68,22 @@ extension AlertViewController {
 extension AlertViewController {
     func button1Tapped(_ sender: UIButton) {
         dismiss()
-        delegate?.didTappedPrimaryButton(self) //completion logic
+        delegate?.didTapPrimaryButton?(self) //completion logic
     }
     
     func button2Tapped(_ sender: UIButton) {
         dismiss()
-        delegate?.didTappedSecondaryButton(self)
+        delegate?.didTapSecondaryButton?(self) //completion logic
     }
     
     func backgroundTapped(_ sender: UIView) {
         dismiss()
-        delegate?.didTappedBackground(self)
+        delegate?.didTapBackground?(self) //completion logic
     }
     
     // Presentation Methods
     public func present() {
-        let rootVC = UIApplication.shared.keyWindow?.rootViewController
-        if let rootVC = rootVC {
+        if let rootVC = UIApplication.shared.keyWindow?.rootViewController {
             // This is simply doing the same thing as presenting a view controller in container view
             rootVC.addChildViewController(self)
             rootVC.view.addSubview(view)
@@ -119,7 +118,6 @@ extension AlertViewController {
             removeFromParentViewController()
         } else {
             windowMode = false
-            
             dismiss(animated: false, completion: nil)
         }
     }
