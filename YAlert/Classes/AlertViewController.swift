@@ -36,6 +36,14 @@ open class AlertViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    public convenience init(title: String?, message: String?, primaryButtonTitle: String?, secondaryButtonTitle: String?) {
+        self.init(bannerImageName: nil, title: title, message: message, primaryButtonTitle: primaryButtonTitle, secondaryButtonTitle: secondaryButtonTitle)
+    }
+
+    public convenience init(title: String?, message: String?, primaryButtonTitle: String?) {
+        self.init(title: title, message: message, primaryButtonTitle: primaryButtonTitle, secondaryButtonTitle: nil)
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         self.alert = Alert()
         self.alertView = AlertView(frame: .zero)

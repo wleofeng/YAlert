@@ -152,6 +152,7 @@ extension AlertView {
         titleTextView.isScrollEnabled = false
         titleTextView.textAlignment = .center
         titleTextView.textColor = UIColor.black
+        titleTextView.font = UIFont.boldSystemFont(ofSize: (titleTextView.font?.pointSize)! + 2)
         titleTextView.textContainerInset = UIEdgeInsetsMake(8, 8, 8, 8)
         titleTextView.sizeToFit()
         

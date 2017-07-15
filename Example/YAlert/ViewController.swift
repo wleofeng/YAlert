@@ -25,12 +25,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAlertButtonTapped(_ sender: Any) {
-        let alertVC = AlertViewController(bannerImageName: "bann2er",
-                                          title: "Alert #2",
-                                          message: "This is a message",
+        let alertVC = AlertViewController(bannerImageName: "banner",
+                                          title: "Are you sure you want to log out?",
+                                          message: "If you sign out of your account, all of your photos will be removed from this iPhone.",
                                           primaryButtonTitle: "Ok",
                                           secondaryButtonTitle: "Cancel")
-        alertVC.tag = 1000
+        alertVC.tag = 2000
         alertVC.delegate = self
         alertVC.present()
     }
@@ -46,7 +46,6 @@ extension ViewController: AlertViewControllerDelegate {
         default:
             print("no tag")
         }
-        
         
         print("primary button tapped")
     }
