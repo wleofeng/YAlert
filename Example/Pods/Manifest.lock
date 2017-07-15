@@ -1,0 +1,16 @@
+PODS:
+  - YAlert (0.1.0)
+
+DEPENDENCIES:
+  - YAlert (from `../`)
+
+EXTERNAL SOURCES:
+  YAlert:
+    :path: ../
+
+SPEC CHECKSUMS:
+  YAlert: a852aef079736587a38652caa10b50f52480ff68
+
+PODFILE CHECKSUM: e0b8ecf6cf2f5a4af884e39acf6e82c9aa6f76d0
+
+COCOAPODS: 1.2.1

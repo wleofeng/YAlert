@@ -1,0 +1,6 @@
+framework module YAlert {
+  umbrella header "YAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}
