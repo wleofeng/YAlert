@@ -1,22 +1,22 @@
 {
   "name": "YAlert",
   "version": "0.1.0",
-  "summary": "A short description of YAlert.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/wleofeng@gmail.com/YAlert",
+  "summary": "A customized alert view controller",
+  "description": "A customized alert view controller featuring the ability to specify banner image, title, message, and two user actions.",
+  "homepage": "https://github.com/wleofeng/YAlert",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "wleofeng@gmail.com": "wleofeng@gmail.com"
+    "Leo Feng": "wleofeng@gmail.com"
   },
   "source": {
-    "git": "https://github.com/wleofeng@gmail.com/YAlert.git",
+    "git": "https://github.com/wleofeng/YAlert.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "YAlert/Classes/**/*"
 }

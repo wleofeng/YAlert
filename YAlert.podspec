@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.description      = 'A customized alert view controller featuring the ability to specify banner image, title, message, and two user actions.'
 
-  s.homepage         = 'https://github.com/wleofeng@gmail.com/YAlert'
+  s.homepage         = 'https://github.com/wleofeng/YAlert'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Leo Feng' => 'wleofeng@gmail.com' }

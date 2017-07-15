@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import YAlert
+//import YAlert
 
 class Tests: XCTestCase {
     
