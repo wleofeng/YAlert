@@ -8,7 +8,11 @@
 
 <image src="https://github.com/wleofeng/YAlert/blob/master/screenshot/screenshot1.png" width=200px>  
 
-## How to use  
+## Introduction
+
+YAlert is a customized alert view controller featuring the ability to specify a banner image, title, message, primary button action and secondary button action.
+
+## Usage
 
 In your view controller, you can initialize and present an AlertViewController instance using the following code:  
 
