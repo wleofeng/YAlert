@@ -123,7 +123,7 @@ extension AlertView {
             - (UI.margin * 2.0)
         
         bannerImageView.image = image
-        bannerImageView.backgroundColor = UIColor.black
+        bannerImageView.backgroundColor = UIColor.white
         bannerImageView.contentMode = UIViewContentMode.scaleAspectFit
         bannerImageView.frame = bannerImageViewFrame
         
