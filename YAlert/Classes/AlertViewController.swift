@@ -15,23 +15,24 @@ import UIKit
 }
 
 open class AlertViewController: UIViewController {
-    fileprivate var windowMode: Bool = false
-    var alert: Alert
-    var alertView: AlertView
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIApplication.shared.statusBarStyle // Inherit the current status bar style
+    }
+    
+    var alertView: AlertView // Main view
+    open var tag: Int = 0 // Identifier
     open weak var delegate: AlertViewControllerDelegate?
-    open var tag: Int = 0
     
     // Initialization
     init(alert: Alert) {
-        self.alert = alert
-        self.alertView = AlertView(model: self.alert)
+        self.alertView = AlertView(model: alert)
 
         super.init(nibName: nil, bundle: nil)
     }
     
     public init(bannerImageName: String?, title: String?, message: String?, primaryButtonTitle: String?, secondaryButtonTitle: String?) {
-        self.alert = Alert(bannerImageName: bannerImageName, title: title, message: message, primaryButtonTitle: primaryButtonTitle, secondaryButtonTitle: secondaryButtonTitle)
-        self.alertView = AlertView(model: self.alert)
+        let alert = Alert(bannerImageName: bannerImageName, title: title, message: message, primaryButtonTitle: primaryButtonTitle, secondaryButtonTitle: secondaryButtonTitle)
+        self.alertView = AlertView(model: alert)
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,7 +46,6 @@ open class AlertViewController: UIViewController {
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        self.alert = Alert()
         self.alertView = AlertView(frame: .zero)
         
         super.init(coder: aDecoder)
@@ -55,6 +55,8 @@ open class AlertViewController: UIViewController {
 // MARK: View cycle
 extension AlertViewController {
     open override func loadView() {
+        super.loadView()
+        
         alertView.primaryButton.addTarget(self, action: #selector(button1Tapped(_:)), for: UIControlEvents.touchUpInside)
         alertView.secondaryButton.addTarget(self, action: #selector(button2Tapped(_:)), for: UIControlEvents.touchUpInside)
         
@@ -86,24 +88,12 @@ extension AlertViewController {
     
     // Presentation Methods
     open func present() {
-        if let rootVC = UIApplication.shared.keyWindow?.rootViewController {
-            // This is simply doing the same thing as presenting a view controller in container view
-            rootVC.addChildViewController(self)
-            rootVC.view.addSubview(view)
-            rootVC.view.bringSubview(toFront: view)
-            view.frame = UIApplication.shared.keyWindow?.bounds ?? UIScreen.main.bounds // view should cover the full window/screen
-            didMove(toParentViewController: rootVC)
-            alertView.showView() // Trigger alert view appearance effects
-        } else {
-            // An alternative to present via a new window
-            windowMode = true
-            
             let window: UIWindow
             if UIApplication.shared.keyWindow?.tag == 9999 {
                 window = UIApplication.shared.keyWindow!
             } else {
                 window = UIWindow(frame: UIScreen.main.bounds)
-                window.rootViewController = UIViewController()
+                window.rootViewController = PresentingViewController()
                 window.windowLevel = UIWindowLevelAlert + 1
                 window.tag = 9999
                 window.makeKeyAndVisible()
@@ -116,18 +106,10 @@ extension AlertViewController {
                     self.alertView.showView() // Trigger alert view appearance effects
                 })
             }
-        }
     }
     
     func dismiss() {
-        if !windowMode {
-            willMove(toParentViewController: nil)
-            view.removeFromSuperview()
-            removeFromParentViewController()
-        } else {
-            windowMode = false
-            dismiss(animated: false, completion: nil)
-        }
+        dismiss(animated: false, completion: nil)
     }
 }
 

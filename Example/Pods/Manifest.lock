@@ -1,5 +1,5 @@
 PODS:
-  - YAlert (0.1.0)
+  - YAlert (0.2.0)
 
 DEPENDENCIES:
   - YAlert (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  YAlert: 0ecef22997173c49e03126d2feac6ebe0aabe98d
+  YAlert: fd46b19e1d9e75b80ad8c8256aa7d389ef1b04d2
 
 PODFILE CHECKSUM: e0b8ecf6cf2f5a4af884e39acf6e82c9aa6f76d0
 
