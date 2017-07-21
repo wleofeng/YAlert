@@ -13,6 +13,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         let alertVC = AlertViewController(bannerImageName: "banner",
                                           title: "Alert #1",

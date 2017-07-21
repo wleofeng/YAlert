@@ -191,8 +191,11 @@ extension AlertView {
         button.backgroundColor = UIColor.clear
     }
     
-    // This need to be called after viewDidAppear
-    func setupStackViewEffects() {
+    /** 
+     This need to be called after viewDidAppear
+     Perform all necessary view effects and animations to show Alert view
+     */
+    func showView() {
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor.white
         

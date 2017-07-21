@@ -65,12 +65,6 @@ extension AlertViewController {
         
         view = alertView
     }
-    
-    open override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        alertView.setupStackViewEffects()
-    }
 }
 
 // MARK: Event handler 
@@ -96,8 +90,10 @@ extension AlertViewController {
             // This is simply doing the same thing as presenting a view controller in container view
             rootVC.addChildViewController(self)
             rootVC.view.addSubview(view)
-            didMove(toParentViewController: rootVC)
+            rootVC.view.bringSubview(toFront: view)
             view.frame = UIApplication.shared.keyWindow?.bounds ?? UIScreen.main.bounds // view should cover the full window/screen
+            didMove(toParentViewController: rootVC)
+            alertView.showView() // Trigger alert view appearance effects
         } else {
             // An alternative to present via a new window
             windowMode = true
@@ -116,7 +112,9 @@ extension AlertViewController {
             // add slight delay to avoid a view distortion issue
             let delayInSeconds: Double = 0.1
             DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
-                window.rootViewController?.present(self, animated: false, completion: nil)
+                window.rootViewController?.present(self, animated: false, completion: { 
+                    self.alertView.showView() // Trigger alert view appearance effects
+                })
             }
         }
     }
