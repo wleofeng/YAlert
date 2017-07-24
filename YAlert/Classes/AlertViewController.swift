@@ -57,8 +57,8 @@ extension AlertViewController {
     open override func loadView() {
         super.loadView()
         
-        alertView.primaryButton.addTarget(self, action: #selector(button1Tapped(_:)), for: UIControlEvents.touchUpInside)
-        alertView.secondaryButton.addTarget(self, action: #selector(button2Tapped(_:)), for: UIControlEvents.touchUpInside)
+        alertView.primaryButton.addTarget(self, action: #selector(primaryButtonTapped(_:)), for: UIControlEvents.touchUpInside)
+        alertView.secondaryButton.addTarget(self, action: #selector(secondaryButtonTapped(_:)), for: UIControlEvents.touchUpInside)
         
         let recognizer = UITapGestureRecognizer()
         recognizer.delegate = self
@@ -71,12 +71,12 @@ extension AlertViewController {
 
 // MARK: Event handler 
 extension AlertViewController {
-    func button1Tapped(_ sender: UIButton) {
+    func primaryButtonTapped(_ sender: UIButton) {
         dismiss()
         delegate?.didTapPrimaryButton?(self) //completion logic
     }
     
-    func button2Tapped(_ sender: UIButton) {
+    func secondaryButtonTapped(_ sender: UIButton) {
         dismiss()
         delegate?.didTapSecondaryButton?(self) //completion logic
     }
