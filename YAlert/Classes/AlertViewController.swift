@@ -65,7 +65,7 @@ extension AlertViewController {
         recognizer.addTarget(self, action: #selector(backgroundTapped(_:)))
         alertView.backgroundView.addGestureRecognizer(recognizer)
         
-        view = alertView
+        view = alertView // AlertView is the view of this VC
     }
 }
 
