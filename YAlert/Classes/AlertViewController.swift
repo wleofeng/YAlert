@@ -88,21 +88,17 @@ extension AlertViewController {
     
     // Presentation Methods
     open func present() {
-            let window: UIWindow
-            if UIApplication.shared.keyWindow?.tag == 9999 {
-                window = UIApplication.shared.keyWindow!
+            var window: UIWindow
+            if let alertWindow = UIApplication.shared.keyWindow as? AlertWindow {
+                window = alertWindow
             } else {
-                window = UIWindow(frame: UIScreen.main.bounds)
-                window.rootViewController = PresentingViewController()
-                window.windowLevel = UIWindowLevelAlert + 1
-                window.tag = 9999
-                window.makeKeyAndVisible()
+                window = AlertWindow()
             }
         
             // add slight delay to avoid a view distortion issue
             let delayInSeconds: Double = 0.1
             DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
-                window.rootViewController?.present(self, animated: false, completion: { 
+                window.rootViewController?.present(self, animated: false, completion: {
                     self.alertView.showView() // Trigger alert view appearance effects
                 })
             }

@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		052F20EDCB5427E91ED4AE32FD0516D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CB8E208FFCC218A7963FEA859F428A /* Constants.swift */; };
+		04DF12DB270B929051B0B8AB4D6AC4DB /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A09C0EEF38966ABA952E60F758AAA0 /* String+Extension.swift */; };
 		13CD5E573D21E96AF9B4522F08627466 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		1BB27FE3CF2F3E49D0FDE4E51703D085 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93D8C87DEC8FB9AC3EF524E770B613D /* AlertView.swift */; };
+		2FD6A7476DCAB970F796BA67D021DC8B /* AlertRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14ED36B82F3A376494ECC30B6A440C /* AlertRootViewController.swift */; };
+		44782E805CF7F4008939881EB7A20CA9 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC9D987A1B7A837085496FE5D292BE7 /* AlertViewController.swift */; };
+		4EF85B67BE0763118D216927A7820086 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48DCDD1AC73A143748156E42457CE9 /* Alert.swift */; };
 		53083AE0ADDA254517673D680C3F9965 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		689DB430E85C656E9B07BC57C4C5BDE2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8452EB10AA550B20821D8405FF37A4 /* String+Extension.swift */; };
-		75E0946A284048D28F2BBC373298EFAE /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFBB66D5E2C4F2B9C399FBE796E30C7 /* AlertViewController.swift */; };
-		8885CB047E4D0286ADCFE3A2666FB0FA /* YAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0875546AAD952D212C5FADDAB8DFDC /* YAlert-dummy.m */; };
-		8C2287485BEB11F7A6AE21C03EB44DFF /* PresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF3E30F4B97DF76D97DC1ED6AFAEAD9 /* PresentingViewController.swift */; };
 		8C9DF9F0A116339DF82844ADE5B827CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		97EB01C9B2A758A4E51C5F79980C2603 /* YAlert-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 261EC84640A075959892B71D52F76E80 /* YAlert-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0B2F482F452F8BE088D69057403D367 /* Pods-YAlert_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 278EE8C59D654A53D18F8FBCF71CB460 /* Pods-YAlert_Tests-dummy.m */; };
-		D352BCFC4B4B0766BEE96F39D83729CE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC3D3B26093E62AC301601B276E9B4 /* Alert.swift */; };
+		BAE9731F7BEAAE016C671185950B5CB2 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C068DF8E5487BC06886B1DF23E23A597 /* AlertView.swift */; };
+		CFF8359E715D857572ACAEFEB9D67308 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7D40152F2FA13A2F92E87216C8EF1 /* Constants.swift */; };
+		D902C0FB6699794003006AB546C3CF17 /* YAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0875546AAD952D212C5FADDAB8DFDC /* YAlert-dummy.m */; };
+		E618CF96F41284738722EA70388FA241 /* AlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5C912C98069CF73CF7699AF7C8DC51 /* AlertWindow.swift */; };
 		F2CB01794492C985B9B78C1943B4D7B8 /* Pods-YAlert_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27744E839F2E167E74251C2692A294F1 /* Pods-YAlert_Example-dummy.m */; };
 		F8BDBDBA34338919960C4F7A0640188E /* Pods-YAlert_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 580C73B2E9966123200337F79B097706 /* Pods-YAlert_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC6633E65C3F245028D4332DAE7C3262 /* Pods-YAlert_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FDF638889DAF76D7CA80474249B8E16 /* Pods-YAlert_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,21 +58,22 @@
 		580C73B2E9966123200337F79B097706 /* Pods-YAlert_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YAlert_Tests-umbrella.h"; sourceTree = "<group>"; };
 		5BA90D2EE2F4FE75B91CA02D319C04B3 /* Pods-YAlert_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YAlert_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		71CB8E208FFCC218A7963FEA859F428A /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		7CFBB66D5E2C4F2B9C399FBE796E30C7 /* AlertViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		6CC9D987A1B7A837085496FE5D292BE7 /* AlertViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		6D48DCDD1AC73A143748156E42457CE9 /* Alert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9A0875546AAD952D212C5FADDAB8DFDC /* YAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YAlert-dummy.m"; sourceTree = "<group>"; };
-		B93D8C87DEC8FB9AC3EF524E770B613D /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		AC5C912C98069CF73CF7699AF7C8DC51 /* AlertWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertWindow.swift; sourceTree = "<group>"; };
+		AF14ED36B82F3A376494ECC30B6A440C /* AlertRootViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertRootViewController.swift; sourceTree = "<group>"; };
 		B9619FB7BFFDE61807A067C74A6237AE /* Pods-YAlert_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-YAlert_Tests.modulemap"; sourceTree = "<group>"; };
+		C068DF8E5487BC06886B1DF23E23A597 /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		C1C2FD35312143610A83C4BE5025706E /* YAlert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YAlert-prefix.pch"; sourceTree = "<group>"; };
-		D2FC3D3B26093E62AC301601B276E9B4 /* Alert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		DDF3E30F4B97DF76D97DC1ED6AFAEAD9 /* PresentingViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PresentingViewController.swift; sourceTree = "<group>"; };
+		D3C7D40152F2FA13A2F92E87216C8EF1 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D5A09C0EEF38966ABA952E60F758AAA0 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E110858CB1FDBF24D39CBC09B89FF9E4 /* Pods-YAlert_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YAlert_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EDE4CCD3157536DDE1713D0AE406F5F3 /* YAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YAlert.framework; path = YAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1BCE46899B29949E44F759F4B28004 /* Pods-YAlert_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YAlert_Example-frameworks.sh"; sourceTree = "<group>"; };
 		FA0D3BBABFBC5F190B3824CDB118B0BD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD7A0A9D22E8A2C585A2CBCF080F6F6C /* Pods-YAlert_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YAlert_Example-resources.sh"; sourceTree = "<group>"; };
-		FF8452EB10AA550B20821D8405FF37A4 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,14 +114,38 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		36D52F11FFB35B5402E761F2F5ADD635 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6D48DCDD1AC73A143748156E42457CE9 /* Alert.swift */,
+				AF14ED36B82F3A376494ECC30B6A440C /* AlertRootViewController.swift */,
+				C068DF8E5487BC06886B1DF23E23A597 /* AlertView.swift */,
+				6CC9D987A1B7A837085496FE5D292BE7 /* AlertViewController.swift */,
+				AC5C912C98069CF73CF7699AF7C8DC51 /* AlertWindow.swift */,
+				D3C7D40152F2FA13A2F92E87216C8EF1 /* Constants.swift */,
+				D5A09C0EEF38966ABA952E60F758AAA0 /* String+Extension.swift */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		39571213A1A4A658F4F3F72E79F7EEA1 /* YAlert */ = {
 			isa = PBXGroup;
 			children = (
 				7B9CC37A54F46DF234FE8C81467E6CF7 /* Support Files */,
-				7BFC1C5BB0448CC3EDD7C3BFCA4370DB /* YAlert */,
+				3E4D519D47B4CC57EFE76AF8CD618DA8 /* YAlert */,
 			);
 			name = YAlert;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		3E4D519D47B4CC57EFE76AF8CD618DA8 /* YAlert */ = {
+			isa = PBXGroup;
+			children = (
+				36D52F11FFB35B5402E761F2F5ADD635 /* Classes */,
+			);
+			name = YAlert;
+			path = YAlert;
 			sourceTree = "<group>";
 		};
 		3ECE3AA04EB705D5D8E6367E832E9CBF /* Development Pods */ = {
@@ -137,20 +163,6 @@
 				742BECCE7BDFE388C6E3A46E69935606 /* Pods-YAlert_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		57490A3D42BA02E14AA4D73A95D3EB9F /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				D2FC3D3B26093E62AC301601B276E9B4 /* Alert.swift */,
-				B93D8C87DEC8FB9AC3EF524E770B613D /* AlertView.swift */,
-				7CFBB66D5E2C4F2B9C399FBE796E30C7 /* AlertViewController.swift */,
-				71CB8E208FFCC218A7963FEA859F428A /* Constants.swift */,
-				DDF3E30F4B97DF76D97DC1ED6AFAEAD9 /* PresentingViewController.swift */,
-				FF8452EB10AA550B20821D8405FF37A4 /* String+Extension.swift */,
-			);
-			name = Classes;
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		742BECCE7BDFE388C6E3A46E69935606 /* Pods-YAlert_Tests */ = {
@@ -183,15 +195,6 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/YAlert";
-			sourceTree = "<group>";
-		};
-		7BFC1C5BB0448CC3EDD7C3BFCA4370DB /* YAlert */ = {
-			isa = PBXGroup;
-			children = (
-				57490A3D42BA02E14AA4D73A95D3EB9F /* Classes */,
-			);
-			name = YAlert;
-			path = YAlert;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -290,7 +293,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E687C42C3A1BD09ECF3638708810D9FB /* Build configuration list for PBXNativeTarget "YAlert" */;
 			buildPhases = (
-				92B9BE59DDAD8DC47482F3DF2C6D82F4 /* Sources */,
+				3A4F5108127E0030BB56835A4F77DF4D /* Sources */,
 				3EA103F46470E1DBB95FB5386E0ED291 /* Frameworks */,
 				BA97A91E951C66759FB9F91343AD009A /* Headers */,
 			);
@@ -350,25 +353,26 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3A4F5108127E0030BB56835A4F77DF4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF85B67BE0763118D216927A7820086 /* Alert.swift in Sources */,
+				2FD6A7476DCAB970F796BA67D021DC8B /* AlertRootViewController.swift in Sources */,
+				BAE9731F7BEAAE016C671185950B5CB2 /* AlertView.swift in Sources */,
+				44782E805CF7F4008939881EB7A20CA9 /* AlertViewController.swift in Sources */,
+				E618CF96F41284738722EA70388FA241 /* AlertWindow.swift in Sources */,
+				CFF8359E715D857572ACAEFEB9D67308 /* Constants.swift in Sources */,
+				04DF12DB270B929051B0B8AB4D6AC4DB /* String+Extension.swift in Sources */,
+				D902C0FB6699794003006AB546C3CF17 /* YAlert-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E79E5DFCB24424A520741A26444AF49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A0B2F482F452F8BE088D69057403D367 /* Pods-YAlert_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92B9BE59DDAD8DC47482F3DF2C6D82F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D352BCFC4B4B0766BEE96F39D83729CE /* Alert.swift in Sources */,
-				1BB27FE3CF2F3E49D0FDE4E51703D085 /* AlertView.swift in Sources */,
-				75E0946A284048D28F2BBC373298EFAE /* AlertViewController.swift in Sources */,
-				052F20EDCB5427E91ED4AE32FD0516D6 /* Constants.swift in Sources */,
-				8C2287485BEB11F7A6AE21C03EB44DFF /* PresentingViewController.swift in Sources */,
-				689DB430E85C656E9B07BC57C4C5BDE2 /* String+Extension.swift in Sources */,
-				8885CB047E4D0286ADCFE3A2666FB0FA /* YAlert-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
