@@ -40,7 +40,7 @@ class AlertView: UIView {
         setupBackground()
         
         stackView.axis = .vertical
-        stackView.alignment = .center
+        stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 0
@@ -187,8 +187,22 @@ extension AlertView {
         setupCommonButton(secondaryButton)
     }
     
+    fileprivate func setupLineView(for button: UIButton) {
+        let lineView = UIView()
+        lineView.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        button.addSubview(lineView)
+        
+        NSLayoutConstraint.activate([
+            lineView.heightAnchor.constraint(equalToConstant: 1),
+            lineView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - (UI.margin * 2) - 2), // 2 for the white border
+            lineView.topAnchor.constraint(equalTo: button.topAnchor),
+            lineView.centerXAnchor.constraint(equalTo: button.centerXAnchor)
+            ])
+    }
+    
     fileprivate func setupCommonButton(_ button: UIButton) {
-        button.backgroundColor = UIColor.clear
+        setupLineView(for: button)
     }
     
     /** 
