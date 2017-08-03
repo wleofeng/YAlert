@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-//import YAlert
+import YAlert
 
 class Tests: XCTestCase {
     
@@ -14,15 +14,15 @@ class Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testInitialization() {
+        let vc = AlertViewController(bannerImageName: nil, title: nil, message: nil, primaryButtonTitle: nil, secondaryButtonTitle: nil)
+        XCTAssertNotNil(vc, "not nil")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    func testPerformance() {
         self.measure() {
-            // Put the code you want to measure the time of here.
+            let vc = AlertViewController(bannerImageName: "test-image", title: "test title", message: "this is a very long test message. this is a very long test message. this is a very long test message. this is a very long test message. this is a very long test message. this is a very long test message. this is a very long test message. this is a very long test message. this is a very long test message. this is a very long test message.", primaryButtonTitle: "Ok", secondaryButtonTitle: "Nevermind")
+            vc.present()
         }
     }
     
