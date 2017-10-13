@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'YAlert'
-  s.version          = '0.4.0'
+  s.version          = '0.6.0'
   s.summary          = 'A customized alert view controller'
   s.description      = 'A customized alert view controller featuring the ability to specify banner image, title, message, and two user actions.'
   s.homepage         = 'https://github.com/wleofeng/YAlert'

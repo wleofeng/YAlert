@@ -71,17 +71,17 @@ extension AlertViewController {
 
 // MARK: Event handler 
 extension AlertViewController {
-    func primaryButtonTapped(_ sender: UIButton) {
+    @objc func primaryButtonTapped(_ sender: UIButton) {
         dismiss()
         delegate?.didTapPrimaryButton?(self) //completion logic
     }
     
-    func secondaryButtonTapped(_ sender: UIButton) {
+    @objc func secondaryButtonTapped(_ sender: UIButton) {
         dismiss()
         delegate?.didTapSecondaryButton?(self) //completion logic
     }
     
-    func backgroundTapped(_ sender: UIView) {
+    @objc func backgroundTapped(_ sender: UIView) {
         dismiss()
         delegate?.didTapBackground?(self) //completion logic
     }
