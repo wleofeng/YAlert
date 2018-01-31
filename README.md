@@ -1,10 +1,5 @@
 # YAlert
 
-[![CI Status](http://img.shields.io/travis/wleofeng/YAlert.svg?style=flat)](https://travis-ci.org/wleofeng/YAlert)
-[![Version](https://img.shields.io/cocoapods/v/YAlert.svg?style=flat)](http://cocoapods.org/pods/YAlert)
-[![License](https://img.shields.io/cocoapods/l/YAlert.svg?style=flat)](http://cocoapods.org/pods/YAlert)
-[![Platform](https://img.shields.io/cocoapods/p/YAlert.svg?style=flat)](http://cocoapods.org/pods/YAlert)
-
 
 <image src="https://github.com/wleofeng/YAlert/blob/master/screenshot/screenshot1.png" width=200px>  
 
